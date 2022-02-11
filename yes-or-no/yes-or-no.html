@@ -1,0 +1,80 @@
+<!doctype HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Yes Or No - 1</title>
+	<style>
+		body {font-family: sans-serif;
+			display: flex;
+			flex-direction: column;
+		}
+
+		#button-container {
+			margin: 0 auto;
+			width: 205px;
+		}
+
+		button{
+			width: 100px;
+			height: 100px;
+			margin: 1px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.state0{
+			background: #f88;
+		}
+
+		.state1{
+			background: #8f8;
+		}
+
+		#coding-instructions {
+			font-size: 20px;
+ 			margin-left: 20px;
+		}
+
+		h2 {
+			font-size: 25px;
+			margin-left: 20px;
+		}
+
+		h1 {
+			font-size: 40px;
+ 			margin-left: 20px;			
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Yes Or No - 1</h1>
+	<h2>Maak deze Yes Or No - 1 pagina<br>lijkend op en werkend volgens<br>filmpje yes-or-no-1.mp4</h2>
+	<div id="button-container">
+		<button>button</button><button>button</button><button>button</button><button>button</button>
+	</div>
+
+	<ul id="coding-instructions">
+		<li>Laat de HTML zoals het is gegeven, doe alles alleen met Javascript en CSS</li>
+		<li>Buttons zijn 100 pixels bij 100 pixels groot</li>
+		<li>Centreer de buttons in de pagina</li>
+		<li>Pas de class "state0" toe op buttons als ze op No staan: state0 geeft als achtergrondkleur: #f88</li>
+		<li>Pas de class "state1" toe op buttons als ze op Yes staan: state1 geeft als achtergrondkleur: #8f8</li>
+		<li>fontgrootte: 20 pixels</li>
+		<li>fontgewicht: vet</li>
+		<li>Werk function clickButton uit en koppel die in een for-loop aan de click-event van de html button-elementen, geen onclick attributen in de HTML</li>
+	</ul>
+</body>
+</html>
+
+
+<script>
+	var buttonContainer = document.getElementById("button-container");
+	allBtns = buttonContainer.children;
+	console.log(allBtns);
+
+	function clickButton(event){
+
+	}
+
+</script>
