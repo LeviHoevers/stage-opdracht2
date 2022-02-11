@@ -71,6 +71,8 @@
 	var state = document.getElementById("state");
 	var arrayBtns = buttonContainer.children;
 
+	var no = 0;
+
 	var combinations = 
 	[
 		[0,1],
@@ -90,8 +92,72 @@
 			var button2 = document.getElementById("button2");
 			var button3 = document.getElementById("button3");
 
-			
+			if(this.classList.contains("state0")){
+				this.classList.replace("state0", "state1");
+				this.innerText = "Yes";
+			}
+			else if(this.classList.contains("state1")){
+				this.classList.replace("state1", "state0");
+				this.innerText = "No";
+			}
+
+			if(this == button0){
+				if(button1.classList.contains("state0")){
+					button1.classList.replace("state0", "state1");
+					button1.innerText = "Yes";
+				}
+				else{
+					button1.classList.replace("state1", "state0");
+					button1.innerText = "No";
+				}
+			}
+			else if(this == button1){
+				if(button2.classList.contains("state0")){
+					button2.classList.replace("state0", "state1");
+					button2.innerText = "Yes";
+				}
+				else{
+					button2.classList.replace("state1", "state0");
+					button2.innerText = "No";
+				}
+			}
+			else if(this == button2){
+				if(button3.classList.contains("state0")){
+					button3.classList.replace("state0", "state1");
+					button3.innerText = "Yes";
+				}
+				else{
+					button3.classList.replace("state1", "state0");
+					button3.innerText = "No";
+				}
+			}
+			else if(this == button3){
+				if(button0.classList.contains("state0")){
+					button0.classList.replace("state0", "state1");
+					button0.innerText = "Yes";
+				}
+				else{
+					button0.classList.replace("state1", "state0");
+					button0.innerText = "No";
+				}
+			}	
+			for(i = 0; i < arrayBtns.length; i++){
+				if(arrayBtns[i].classList.contains("state0")){
+					no++
+				}
+				else{
+					no = 0;
+				}
+			}
+			if(no == arrayBtns.length){
+				state.innerText = "All set to No.";
+			}
+			else if(no == 0){
+				state.innerText = "All set to Yes.";
+			}
+			else{
+				state.innerText = "Busy clicking!";
+			}
 		}
 	}
-
 </script>
