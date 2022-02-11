@@ -69,15 +69,29 @@
 <script>
 	var buttonContainer = document.getElementById("button-container");
 	var state = document.getElementById("state");
-	arrayBtns = buttonContainer.children;
+	var arrayBtns = buttonContainer.children;
+
+	var combinations = 
+	[
+		[0,1],
+		[1,2],
+		[2,3],
+		[3,0]
+	];
 
 	for(i = 0; i < arrayBtns.length; i++){
-		arrayBtns[i].id = "button-" + [i];
+		arrayBtns[i].id = "button" + [i];
 		arrayBtns[i].classList.add("state0");
 		arrayBtns[i].innerText = "No";
+		state.innerText = "All set to No.";
 		arrayBtns[i].onclick = function clickButton(event){
-		
+			var button0 = document.getElementById("button0");
+			var	button1 = document.getElementById("button1");
+			var button2 = document.getElementById("button2");
+			var button3 = document.getElementById("button3");
+
+			
 		}
-	};
+	}
 
 </script>

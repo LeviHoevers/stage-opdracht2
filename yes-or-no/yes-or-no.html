@@ -70,21 +70,18 @@
 
 <script>
 	var buttonContainer = document.getElementById("button-container");
-	arrayBtns = buttonContainer.children;
+	var arrayBtns = buttonContainer.children;
 
 	for(i = 0; i < arrayBtns.length; i++){
-		arrayBtns[i].id = "button-" + [i];
 		arrayBtns[i].classList.add("state0");
 		arrayBtns[i].innerText = "No";
 		arrayBtns[i].onclick = function clickButton(event){
 			if(this.classList.contains("state0")){
-				this.classList.remove("state0");
-				this.classList.add("state1");
+				this.classList.replace("state0", "state1");
 				this.innerText = "Yes";
 			}
 			else if(this.classList.contains("state1")){
-				this.classList.remove("state1");
-				this.classList.add("state0");
+				this.classList.replace("state1", "state0");
 				this.innerText = "No";
 			}
 		}
