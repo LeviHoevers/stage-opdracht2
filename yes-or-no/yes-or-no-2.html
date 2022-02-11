@@ -4,9 +4,30 @@
 	<meta charset="utf-8"/>
 	<title>Yes Or No - 2</title>
 	<style>
-		body {font-family: sans-serif;}
-		#button-container {
+		body{font-family: sans-serif;
+			display: flex;
+			flex-direction: column;
+		}
 
+		#button-container{
+			margin: 0 auto;
+			width: 205px;
+		}
+
+		#button-container button{
+			width: 100px;
+			height: 100px;
+			margin: 1px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.state0{
+			background: #f88;
+		}
+
+		.state1{
+			background: #8f8;
 		}
 
 		#coding-instructions {
@@ -46,8 +67,17 @@
 </html>
 
 <script>
-	function clickButton(event){
+	var buttonContainer = document.getElementById("button-container");
+	var state = document.getElementById("state");
+	arrayBtns = buttonContainer.children;
 
-	}
+	for(i = 0; i < arrayBtns.length; i++){
+		arrayBtns[i].id = "button-" + [i];
+		arrayBtns[i].classList.add("state0");
+		arrayBtns[i].innerText = "No";
+		arrayBtns[i].onclick = function clickButton(event){
+		
+		}
+	};
 
 </script>
