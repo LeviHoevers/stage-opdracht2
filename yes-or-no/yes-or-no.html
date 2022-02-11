@@ -4,17 +4,17 @@
 	<meta charset="utf-8"/>
 	<title>Yes Or No - 1</title>
 	<style>
-		body {font-family: sans-serif;
+		body{font-family: sans-serif;
 			display: flex;
 			flex-direction: column;
 		}
 
-		#button-container {
+		#button-container{
 			margin: 0 auto;
 			width: 205px;
 		}
 
-		button{
+		#button-container button{
 			width: 100px;
 			height: 100px;
 			margin: 1px;
@@ -70,11 +70,27 @@
 
 <script>
 	var buttonContainer = document.getElementById("button-container");
-	allBtns = buttonContainer.children;
-	console.log(allBtns);
+	arrayBtns = buttonContainer.children;
 
-	function clickButton(event){
+	for(i = 0; i < arrayBtns.length; i++){
+		arrayBtns[i].id = "button-" + [i];
+		arrayBtns[i].classList.add("state0");
+		arrayBtns[i].innerText = "No";
+		arrayBtns[i].onclick = function clickButton(event){
+			if(this.classList.contains("state0")){
+				this.classList.remove("state0");
+				this.classList.add("state1");
+				this.innerText = "Yes";
+			}
+			else if(this.classList.contains("state1")){
+				this.classList.remove("state1");
+				this.classList.add("state0");
+				this.innerText = "No";
+			}
+		}
+	};
+	
 
-	}
+
 
 </script>
