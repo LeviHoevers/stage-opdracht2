@@ -4,9 +4,30 @@
 	<meta charset="utf-8"/>
 	<title>Yes Or No - 3</title>
 	<style>
-		body {font-family: sans-serif;}
-		#button-container {
+		body{font-family: sans-serif;
+			display: flex;
+			flex-direction: column;
+		}
 
+		#button-container{
+			margin: 0 auto;
+			width: 205px;
+		}
+
+		#button-container button{
+			width: 100px;
+			height: 100px;
+			margin: 1px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.state0{
+			background: #f88;
+		}
+
+		.state1{
+			background: #8f8;
 		}
 
 		#coding-instructions {
@@ -46,8 +67,59 @@
 </html>
 
 <script>
-	function clickButton(event){
+	var buttonContainer = document.getElementById("button-container");
+	var state = document.getElementById("state");
+	var arrayBtns = buttonContainer.children;
 
+	var combinations = 
+	[
+		[0,1],
+		[1,2],
+		[2],
+		[3,0]
+	];
+	
+	for(i = 0; i < arrayBtns.length; i++){
+		arrayBtns[i].dataset.index = i;
+		arrayBtns[i].classList.add("state0");
+		arrayBtns[i].innerText = "No";
+		state.innerText = "All set to No.";
+		arrayBtns[i].onclick = function clickButton(event){
+
+			var no = 0;
+
+			console.log(combinations[this.dataset.index])
+			toggleBtns(combinations[this.dataset.index])
+
+			for(i = 0; i < arrayBtns.length; i++){
+				if(arrayBtns[i].classList.contains("state0")){
+					no++
+				}
+			}
+			if(no == arrayBtns.length){
+				state.innerText = "All set to No.";
+			}
+			else if(no == 0){
+				state.innerText = "All set to Yes.";
+			}
+			else{
+				state.innerText = "Busy clicking!";
+			}
+		}
 	}
+
+	function toggleBtns(array){
+		for(i = 0; i < array.length; i++){
+			if(arrayBtns[array[i]].classList.contains("state0")){
+				arrayBtns[array[i]].classList.replace("state0", "state1");
+				arrayBtns[array[i]].innerText = "Yes";
+			}
+			else{
+				arrayBtns[array[i]].classList.replace("state1", "state0");
+				arrayBtns[array[i]].innerText = "No";
+			}
+		}
+	}
+
 
 </script>

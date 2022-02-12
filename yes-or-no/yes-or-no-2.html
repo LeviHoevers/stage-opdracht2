@@ -71,8 +71,6 @@
 	var state = document.getElementById("state");
 	var arrayBtns = buttonContainer.children;
 
-	var no = 0;
-
 	var combinations = 
 	[
 		[0,1],
@@ -87,6 +85,8 @@
 		arrayBtns[i].innerText = "No";
 		state.innerText = "All set to No.";
 		arrayBtns[i].onclick = function clickButton(event){
+			var no = 0;
+			
 			var button0 = document.getElementById("button0");
 			var	button1 = document.getElementById("button1");
 			var button2 = document.getElementById("button2");
@@ -121,16 +121,6 @@
 					button2.innerText = "No";
 				}
 			}
-			else if(this == button2){
-				if(button3.classList.contains("state0")){
-					button3.classList.replace("state0", "state1");
-					button3.innerText = "Yes";
-				}
-				else{
-					button3.classList.replace("state1", "state0");
-					button3.innerText = "No";
-				}
-			}
 			else if(this == button3){
 				if(button0.classList.contains("state0")){
 					button0.classList.replace("state0", "state1");
@@ -140,13 +130,10 @@
 					button0.classList.replace("state1", "state0");
 					button0.innerText = "No";
 				}
-			}	
+			}
 			for(i = 0; i < arrayBtns.length; i++){
 				if(arrayBtns[i].classList.contains("state0")){
 					no++
-				}
-				else{
-					no = 0;
 				}
 			}
 			if(no == arrayBtns.length){
